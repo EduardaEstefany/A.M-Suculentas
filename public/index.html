@@ -1,0 +1,290 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Barbara Belloni e Eduarda Mendes" />
+  <meta name="keywords" content="suculentas, plantas, lembrancinhas, presentes" />
+  <meta name="description" content="Presenteie com suculentas e crie memórias vivas!" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AM Suculentas</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!--Barra de navegação superior-->
+  <nav>
+    <img id="icone-nav" src="assets/icons/iconverdeerosa.png" alt="Logo">
+
+    <!-- Checkbox invisível para controlar o menu -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="nav-links">
+      <a class="a-menu" href="#sobre">SOBRE</a>
+      <a class="a-menu" href="#produtos">PRODUTOS</a>
+      <a class="a-menu" href="#avaliacoes">AVALIAÇÕES</a>
+    </div>
+  </nav>
+
+  <!--Header/Página 1-->
+  <header>
+    <img id="img-banner" src="assets/img/banner.png"
+      alt="Mãos usando luvas brancas carregando um vaso em cerâmica com suculentas de diversas variedades." />
+    <div id="conteudo-header">
+      <img id="icone-header" src="assets/icons/iconheader.png" alt="Ícone suculenta branco.">
+      <div id="texto-header">
+        <h1><strong>A.M. Suculentas</strong></h1>
+        <p id="subtitulo-header">CULTIVANDO LEMBRANÇAS</p>
+        <a href="#orcamento" id="botao-header"> <img src="assets/img/botao-header.png" alt="FAÇA SEU ORÇAMENTO"></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Promoções -->
+  <section class="promocoes">
+    <div class="promocoes-container">
+      <div class="promo-card">
+        <div class="promo-badge">ESPECIAL</div>
+        <img src="assets/img/Img_mae.jpg" alt="Presente dia das mães" class="promo-img" />
+        <div class="promo-content">
+          <h3>Dia das Mães</h3>
+          <p>Presenteie sua mãe com lindas suculentas que demonstram todo seu amor e carinho!</p>
+          <a href="#orcamento" class="btn-promo">Ver Opções</a>
+        </div>
+      </div>
+      <div class="promo-card">
+        <div class="promo-badge desconto">-15%</div>
+        <img src="assets/img/Img_promo.jpg" alt="Desconto suculentas" class="promo-img" />
+        <div class="promo-content">
+          <h3>Época de Suculentas</h3>
+          <p>Desconto especial para compras acima de 10 unidades. Ideal para eventos!</p>
+          <a href="#orcamento" class="btn-promo">Aproveitar</a>
+        </div>
+      </div>
+      <div class="promo-card">
+        <div class="promo-badge desconto">-15%</div>
+        <img src="assets/img/Suculenta_4.png" alt="Promoção de Natal" class="promo-img" />
+        <div class="promo-content">
+          <h3>Natal está chegando!</h3>
+          <p>Antecipe sua encomenda de Natal: desconto de 15% e frete grátis para pedidos acima de 15 unidades!</p>
+          <a href="#orcamento" class="btn-promo">Quero aproveitar</a>
+        </div>
+      </div>
+      <div class="promo-card">
+        <div class="promo-badge">ESPECIAL</div>
+        <img src="assets/img/Suculenta_5.png" alt="Dia dos Namorados" class="promo-img" />
+        <div class="promo-content">
+          <h3>Dia dos Namorados</h3>
+          <p>Comemore o amor com suculentas especiais para presentear quem você ama!</p>
+          <a href="#orcamento" class="btn-promo">Ver opções</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo -->
+  <section class="catalogo" id="catalogo">
+    <h2 class="secao-titulo">Nosso Catálogo</h2>
+    <div class="carrossel-container">
+      <button class="carrossel-btn prev" onclick="moverCarrossel(-1)">‹</button>
+      <div class="carrossel">
+        <div class="carrossel-track" id="carrossel-produtos">
+          <!-- Produtos ativos vão ser inseridos aqui via JS -->
+        </div>
+      </div>
+      <button class="carrossel-btn next" onclick="moverCarrossel(1)">›</button>
+    </div>
+    <div class="carrossel-indicadores indicadores">
+      <!-- Indicadores serão inseridos dinamicamente via JS -->
+    </div>
+  </section>
+
+  <!-- Orçamento -->
+  <section class="orcamento" id="orcamento">
+    <h2>Faça seu orçamento</h2>
+    <div class="orcamento-flex">
+      <form class="form-orcamento">
+        <div class="input-group">
+          <span class="input-icon"><svg width="20" height="20" fill="none" stroke="#7a8a54" stroke-width="2"
+              viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 20c0-4 8-4 8-4s8 0 8 4" />
+            </svg></span>
+          <input type="text" id="nome" placeholder="Nome e sobrenome" required />
+        </div>
+        <div class="input-group">
+          <span class="input-icon"><svg width="20" height="20" fill="none" stroke="#7a8a54" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4z" />
+              <path d="M22 6l-10 7L2 6" />
+            </svg></span>
+          <input type="email" id="email" placeholder="seunome@email.com" required />
+        </div>
+        <div class="input-group">
+          <span class="input-icon"><svg width="20" height="20" fill="none" stroke="#7a8a54" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path
+                d="M22 16.92V19a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13 1.13.37 2.23.72 3.28a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c1.05.35 2.15.59 3.28.72A2 2 0 0 1 22 16.92z" />
+            </svg></span>
+          <input type="tel" id="telefone" placeholder="(61) 9 9999-9999" required />
+        </div>
+        <div class="form-row">
+          <div class="input-group">
+            <span class="input-icon"><svg width="20" height="20" fill="none" stroke="#7a8a54" stroke-width="2"
+                viewBox="0 0 24 24">
+                <rect x="3" y="7" width="18" height="13" rx="2" />
+                <path d="M16 3v4M8 3v4" />
+              </svg></span>
+            <select id="produto" required>
+              <option value="" disabled selected>Selecione o produto</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <span class="input-icon"><svg width="20" height="20" fill="none" stroke="#7a8a54" stroke-width="2"
+                viewBox="0 0 24 24">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <path d="M9 9h6v6H9z" />
+              </svg></span>
+            <input type="number" id="quantidade" placeholder="Quantidade" min="1" required />
+          </div>
+        </div>
+        <div class="input-group">
+          <span class="input-icon"><svg width="20" height="20" fill="none" stroke="#7a8a54" stroke-width="2"
+              viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M8 2v4M16 2v4" />
+            </svg></span>
+          <textarea id="obs" placeholder="Observações"></textarea>
+        </div>
+        <button type="submit">ENVIAR</button>
+      </form>
+      <div class="orcamento-img-container">
+        <img src="assets/img/IMG_Orcamento.png" alt="Orçamento" class="orcamento-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="depoimentos-lista">
+      <div class="depoimento">
+        <img src="sandra.jpg" alt="Sandra" />
+        <h3>Sandra</h3>
+        <p>
+          "Sou apaixonada por suculentas! Comecei a comprar para decorar minha casa e hoje não vivo sem elas. São fáceis
+          de cuidar, se adaptam bem em qualquer cantinho e deixam o ambiente muito mais aconchegante."
+        </p>
+      </div>
+      <div class="depoimento">
+        <img src="alessandra.jpg" alt="Alessandra" />
+        <h3>Alessandra</h3>
+        <p>
+          "É uma forma que encontrei de me conectar com a natureza, mesmo morando em apartamento. Sempre que chega uma
+          plantinha nova, é uma alegria! Recomendo para todo mundo que quer trazer mais vida para o dia a dia, sem
+          complicação."
+        </p>
+      </div>
+      <div class="depoimento">
+        <img src="joana.jpg" alt="Joana" />
+        <h3>Joana</h3>
+        <p>
+          "Ter suculentas em casa transformou a minha vida de um jeito que eu nem imaginava. Cada plantinha que chega é
+          como um presente, uma nova história para cuidar e acompanhar."
+        </p>
+      </div>
+    </div>
+    <a href="#form-depoimento" class="btn-secondary">Deixe seu depoimento</a>
+  </section>
+
+  <!-- Sobre -->
+  <section class="sobre" id="sobre">
+    <img src="suculentas-filosofia.jpg" alt="Suculentas variadas" class="sobre-img" />
+    <div class="sobre-texto">
+      <p>
+        Na <strong>AM Suculentas</strong>, acreditamos que os melhores presentes são aqueles que criam memórias afetivas
+        e duram no tempo. Por isso, oferecemos lembranças vivas: plantas cuidadosamente cultivadas e colocadas em vasos
+        especiais, perfeitas para presentear em eventos, festas, casamentos e datas importantes.
+      </p>
+      <p>
+        Mais do que um simples presente, cada planta é um convite ao cuidado, à conexão com a natureza e à criação de um
+        vínculo que permanece. Enquanto as flores de um buquê murcham em poucos dias, nossas plantinhas seguem
+        crescendo, lembrando sempre de um momento feliz e acolhedor. Queremos que cada pessoa que recebe
+        um dos nossos vasinhos se sinta aconchegada, abraçada pela delicadeza e pela vida que ele representa.
+        Personalizamos cada lembrança para que ela seja única, com embalagens cheias de charme e carinho, traduzindo a
+        essência de quem oferece e emocionando quem recebe.
+      </p>
+      <p>
+        Presentes que não se esquecem. Memórias que florescem.
+      </p>
+    </div>
+  </section>
+
+  <!-- Formulário de depoimento -->
+  <section class="formulario-depoimento" id="form-depoimento">
+    <h2>Deixe seu depoimento</h2>
+    <form>
+      <label>Nome:</label>
+      <input type="text" placeholder="Nome e sobrenome" required />
+      <label>E-mail:</label>
+      <input type="email" placeholder="seunome@email.com" required />
+      <label>Telefone:</label>
+      <input type="tel" placeholder="(61) 9 9999-9999" required />
+      <label>Mensagem:</label>
+      <textarea placeholder="Escreva sua mensagem aqui..." required></textarea>
+      <button type="submit">ENVIAR</button>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-main">
+      <div>
+        <h2>AM Suculentas</h2>
+        <p><strong>Endereço:</strong><br>
+          Feira de Planaltina loja X<br>
+          rua tal, lote tal<br>
+          <a href="#">localização.link</a>
+        </p>
+        <p><strong>Horário de funcionamento:</strong><br>
+          7h às 18h de terça-feira a domingo
+        </p>
+        <p><strong>Telefone:</strong><br>
+          (61)99999-9999
+        </p>
+        <p><strong>Instagram:</strong><br>
+          <a href="https://www.instagram.com/a.msuculentas/?igsh=eXhkbmZ0aWg2OGt1#">@a.msuculentas</a>
+        </p>
+      </div>
+      <div>
+        <h3><strong>Mapa do site:</strong></h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Promoções</a></li>
+          <li><a href="#">Catálogo</a></li>
+          <li><a href="#">Faça um orçamento</a></li>
+          <li><a href="#">Depoimentos</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Deixe seu depoimento</a></li>
+          <li><a href="#">Artigos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-creditos">
+      Desenvolvido por <span>Bárbara, Eduarda e João Marcos</span>
+      <p>© AM Suculentas – Todos os direitos reservados</p>
+    </div>
+    <button id="btn-topo" title="Voltar ao topo">↑ Topo</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

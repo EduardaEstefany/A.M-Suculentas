@@ -1,0 +1,69 @@
+<!--private/index.html-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Admin - AM Suculentas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Painel Admin</h1>
+
+    <form id="form-produto">
+      <input type="hidden" id="produto-id">
+
+      <div class="form-group">
+        <label>Nome:</label>
+        <input type="text" id="nome" required>
+      </div>
+
+      <div class="form-group">
+        <label>Preço:</label>
+        <input type="text" id="preco" required>
+      </div>
+
+      <div class="form-group">
+        <label>Estoque:</label>
+        <input type="number" id="estoque" required>
+      </div>
+
+      <div class="form-group">
+        <label>Promoção:</label>
+        <input type="text" id="promocao">
+      </div>
+
+      <div class="form-group">
+        <label>Ativo:</label>
+        <select id="ativo">
+          <option value="true">Ativado</option>
+          <option value="false">Desativado</option>
+        </select>
+      </div>
+
+      <button type="submit">Salvar Produto</button>
+    </form>
+
+    <h2>Produtos Cadastrados</h2>
+    <table id="tabela-produtos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th>Estoque</th>
+          <th>Promoção</th>
+          <th>Ativo</th>
+          <th>Imagem</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Input oculto para upload de imagem -->
+    <input type="file" id="cell-file-input" style="display:none;">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
