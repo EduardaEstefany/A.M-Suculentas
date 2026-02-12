@@ -63,9 +63,20 @@ async function carregarProdutos() {
       item.className = 'carrossel-item';
       // Badge de promoção apenas com a porcentagem
       let badge = '';
+      let precoHTML = '';
+      
       if (produto.promocao && produto.promocao > 0) {
         badge = `<div class='promo-badge desconto'>- ${produto.promocao}%</div>`;
+        // Calcula o preço com desconto
+        const precoComDesconto = (produto.preco * (100 - produto.promocao) / 100).toFixed(2);
+        precoHTML = `
+          <p><span class="preco-original">R$ ${produto.preco}</span></p>
+          <p class="preco-desconto">R$ ${precoComDesconto}</p>
+        `;
+      } else {
+        precoHTML = `<p>R$ ${produto.preco}</p>`;
       }
+      
       item.innerHTML = `
         <div class="carrossel-img-container" style="position:relative;">
           ${badge}
@@ -74,7 +85,7 @@ async function carregarProdutos() {
         <div class="item-overlay">
           <h4>${produto.nome}</h4>
           <p>${produto.descricao || ''}</p>
-          <p>R$ ${produto.preco}</p>
+          ${precoHTML}
         </div>
       `;
       carrossel.appendChild(item);

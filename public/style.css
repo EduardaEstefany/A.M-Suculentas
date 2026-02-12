@@ -232,7 +232,7 @@ h1 {
   border-radius: 20px;
   font-weight: bold;
   font-size: 0.9rem;
-  z-index: 2;
+  z-index: 10;
 }
 
 .promo-badge.desconto {
@@ -307,26 +307,38 @@ h1 {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 20px;
 }
 
 .carrossel {
   overflow: hidden;
   border-radius: 16px;
+  height: 280px;
+  width: 100%;
 }
 .carrossel-track {
   display: flex;
   transition: transform 0.5s ease;
   gap: 24px;
+  height: 100%;
+  width: 100%;
 }
 
 .carrossel-item {
   position: relative;
-  min-width: calc(33.333% - 16px);
-  aspect-ratio: 1/1;
+  flex: 0 0 calc(33.333% - 16px);
+  height: 100%;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   cursor: pointer;
+}
+
+.carrossel-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .carrossel-item img {
@@ -364,6 +376,19 @@ h1 {
   margin: 0;
   font-size: 0.9rem;
   opacity: 0.9;
+}
+
+.preco-original {
+  text-decoration: line-through;
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+.preco-desconto {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #00ff2a;
+  margin-top: 4px !important;
 }
 
 .carrossel-btn {
